@@ -1,0 +1,26 @@
+<form [formGroup]="loginFormControl" class="login-form">
+    <div class="login-form__container">
+        
+        <mat-form-field class="login-form__container__input">
+            <mat-label>Name</mat-label>
+            <input matInput name="name" formControlName="name" type="text">
+            <mat-error *ngIf="name">
+                Please enter a valid name
+            </mat-error>
+        </mat-form-field>
+        
+        <mat-form-field class="login-form__container__input">
+            <mat-label>Value</mat-label>
+            <input matInput name="value" formControlName="value" type="number">
+            <mat-error *ngIf="loginFormControl">
+                Please enter a valid value (min value is R$ 10)
+            </mat-error>
+        </mat-form-field>
+
+        <button type="submit" (click)="onSubmit()" class="login-form__container__button" mat-flat-button
+            color="primary">
+            <span class="login-form__container__button__text">Join</span>
+        </button>
+
+    </div>
+</form>
